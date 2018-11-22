@@ -1,14 +1,16 @@
 package com.springboot.demojpa.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 // @JsonIgnoreProperties(value={"field3})
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 
     private String field1;
     private String field2;
 
-    @JsonIgnore
+    //@JsonIgnore  for static filtering
     private String field3;
 
     public SomeBean(String field1, String field2, String field3) {
